@@ -1,0 +1,16 @@
+- path: doc.definitions.A1.properties.personality.enum.[0]
+  type: deleted
+  from: crazy
+  from-index: 0
+- path: doc.definitions.A1.properties.personality.enum.[2]
+  type: added
+  to: sane
+  to-index: 2
+- path: doc.paths./a/.get.parameters.name:personality.enum.[2]
+  type: deleted
+  from: saucy
+  from-index: 2
+- path: doc.paths./a/.get.parameters.name:personality.enum.[2]
+  type: added
+  to: extrovert
+  to-index: 2

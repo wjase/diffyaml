@@ -1,0 +1,4 @@
+- path: doc.[0]
+  type: added
+  to: an item Added
+  to-index: 0

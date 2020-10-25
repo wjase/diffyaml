@@ -1,0 +1,7 @@
+- path: doc.first-key:item3.second-key
+  type: changed
+  from: item2
+  to: somevalue
+- path: doc.first-key:newitem
+  type: added
+  to-index: 2

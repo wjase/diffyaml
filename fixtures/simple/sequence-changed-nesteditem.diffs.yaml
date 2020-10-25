@@ -1,0 +1,4 @@
+- path: doc.first-key:item3.second-key
+  type: changed
+  from: item2
+  to: changed

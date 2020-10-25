@@ -1,0 +1,26 @@
+- path: doc.definitions.Product.properties.display_name.description
+  type: added
+  to: Display name of product.
+- path: doc.info.description
+  type: changed
+  from: Move your app forward with the Uber API
+  to: Move your app forward with the Uber API with description change
+- path: doc.paths./estimates/price.get.tags.[1]
+  type: deleted
+  from: DeadTagWalking
+  from-index: 1
+- path: doc.paths./estimates/price.get.tags.[1]
+  type: added
+  to: A new tag
+  to-index: 1
+- path: doc.paths./history.get.description
+  type: added
+  to: The User Activity endpoint returns data about a user's lifetime activity with Uber. The response will include pickup locations and times, dropoff locations and times, the distance of past requests, and information about which products were requested.<br><br>The history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.
+- path: doc.paths./products.get.description
+  type: changed
+  from: The Products endpoint returns information about the Uber products offered at a given location. The response includes the display name and other details about each product, and lists the products in the proper display order.
+  to: The Products endpoint returns information about the Uber products offered at a given location. The response includes the display name and other details about each product.
+- path: doc.paths./products.get.parameters.name:latitude.description
+  type: changed
+  from: Latitude component of location.
+  to: Latitude component of location with addition.

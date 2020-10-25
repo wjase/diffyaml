@@ -1,0 +1,4 @@
+- path: doc.items2.third-key
+  type: changed
+  from: item3
+  to: changed yo

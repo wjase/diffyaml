@@ -1,0 +1,6 @@
+- path: doc.paths./a/{id}.post
+  type: deleted
+- path: doc.paths./b/
+  type: deleted
+- path: doc.paths./newpath/
+  type: added

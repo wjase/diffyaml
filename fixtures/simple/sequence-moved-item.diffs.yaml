@@ -1,0 +1,4 @@
+- path: doc.[0]
+  type: moved
+  from-index: 0
+  to-index: 2

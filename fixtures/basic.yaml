@@ -1,0 +1,14 @@
+- name: John Doe
+  #comment here
+  address: 
+    street: 123 E 3rd St
+    city: Denver
+    state: CO
+    zip: 81526
+- name: bob smith
+  #comment here
+  address: 
+    street: 123 E 4th St
+    city: Denver
+    state: CO
+    zip: 81526

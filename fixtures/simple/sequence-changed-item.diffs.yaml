@@ -1,0 +1,8 @@
+- path: doc.[1]
+  type: deleted
+  from: an item 2
+  from-index: 1
+- path: doc.[1]
+  type: added
+  to: an item something else
+  to-index: 1

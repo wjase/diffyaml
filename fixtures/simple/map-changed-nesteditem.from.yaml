@@ -1,0 +1,12 @@
+item1:
+  first-key: item1
+  second-key: item2
+  third-key: item3
+items2:
+  first-key: item2
+  second-key: item2
+  third-key: item3
+items3:
+  first-key: item3
+  second-key: item2
+  third-key: item3
