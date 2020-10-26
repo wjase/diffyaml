@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/corbym/gocrest/is"
-	"github.com/wjase/diffyam/pkg/diff"
+	"github.com/wjase/diffyaml/pkg/diff"
 	"gopkg.in/yaml.v3"
 )
 

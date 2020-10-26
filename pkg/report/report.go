@@ -4,7 +4,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/wjase/diffyam/pkg/diff"
+	"github.com/wjase/diffyaml/pkg/diff"
 	"gopkg.in/yaml.v3"
 )
 

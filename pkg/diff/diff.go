@@ -3,7 +3,7 @@ package diff
 import (
 	"os"
 
-	"github.com/wjase/diffyam/pkg/array"
+	"github.com/wjase/diffyaml/pkg/array"
 	"gopkg.in/yaml.v3"
 )
 

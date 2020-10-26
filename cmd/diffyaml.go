@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/wjase/diffyam/pkg/diff"
-	"github.com/wjase/diffyam/pkg/report"
+	"github.com/wjase/diffyaml/pkg/diff"
+	"github.com/wjase/diffyaml/pkg/report"
 )
 
 func main() {

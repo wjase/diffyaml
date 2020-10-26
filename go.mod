@@ -1,4 +1,4 @@
-module github.com/wjase/diffyam
+module github.com/wjase/diffyaml
 
 go 1.15
 

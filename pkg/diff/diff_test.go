@@ -12,8 +12,8 @@ import (
 	"github.com/corbym/gocrest/is"
 	"github.com/corbym/gocrest/then"
 	"github.com/stretchr/testify/require"
-	"github.com/wjase/diffyam/pkg/diff"
-	"github.com/wjase/diffyam/pkg/report"
+	"github.com/wjase/diffyaml/pkg/diff"
+	"github.com/wjase/diffyaml/pkg/report"
 )
 
 var assertThat = then.AssertThat
