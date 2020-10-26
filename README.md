@@ -1,4 +1,4 @@
-# diffyam
+# diffyaml
 
 ## Semantic difference for yaml files
 
@@ -22,7 +22,7 @@ The report produced by diffyam is itself a yaml sequence of ChangeLog entries wh
 
 ## Usage Syntax - command line
 
-    diffyam filePath1 filePath2
+    diffyaml filePath1 filePath2
 
 Will produce the change log to stdout.
 
