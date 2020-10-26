@@ -34,8 +34,6 @@ Syntax: diffyam  yamlfile1 yamlfile2
 		fmt.Fprintf(flag.CommandLine.Output(), "Error: Two args required\n")
 		flag.Usage()
 	}
-	//fmt.Printf("%s %d %t \n", svar, *numbPtr, *boolPtr)
-	fmt.Println("tail:", args)
 	oldSpec := args[0]
 	newSpec := args[1]
 

@@ -2,7 +2,7 @@
 
 ## Semantic difference for yaml files
 
-diffyam compares two yaml files and produces a list of changes which reflect a
+diffyaml compares two yaml files and produces a list of changes which reflect a
 knowledge of the structure of yaml files. Yaml has three main types of nodes:
    * Scalar values (strings, numbers)
    * Mapped values (name=john, age=25)
@@ -24,9 +24,24 @@ The report produced by diffyam is itself a yaml sequence of ChangeLog entries wh
 
     diffyaml filePath1 filePath2
 
-Will produce the change log to stdout.
+Will produce the change log to stdout. All node paths are prefixed with 'doc.'
 
+## example
+
+Running:
+
+    diffyaml ./fixtures/simple/map-key-added.from.yaml ./fixtures/ simple/map-key-added.to.yaml
+
+produces:
+
+    - path: doc.fourth-key
+      type: added
+      to: item4
 
 ## Usage - golang library
 
 You can use the Changelog items produced by diffyam to do more specific analysis relevent to a given domain, eg a kubernetes resource defintion or openapi spec.
+
+## golang exmaple
+
+coming soon
