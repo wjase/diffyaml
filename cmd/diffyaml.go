@@ -37,7 +37,7 @@ Syntax: diffyam  yamlfile1 yamlfile2
 	oldSpec := args[0]
 	newSpec := args[1]
 
-	changes, err := diff.CompareYamlFiles(oldSpec, newSpec)
+	changes, err := diff.GetYamlFileChanges(oldSpec, newSpec)
 	if err != nil {
 		fmt.Printf("ERROR: %v", err)
 		os.Exit(-1)

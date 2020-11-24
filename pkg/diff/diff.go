@@ -7,25 +7,25 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// CompareYamlFiles loads the specs and compares them
-func CompareYamlFiles(oldSpec, newSpec string) (ChangeLogEntries, error) {
-	spec1, err := readSpec(oldSpec)
+// GetYamlFileChanges loads the specs and compares them
+func GetYamlFileChanges(oldSpec, newSpec string) (ChangeLogEntries, error) {
+	spec1, err := ReadYAMLFile(oldSpec)
 	if err != nil {
 		return nil, err
 	}
-	spec2, err := readSpec(newSpec)
+	spec2, err := ReadYAMLFile(newSpec)
 	if err != nil {
 		return nil, err
 	}
-	changes, err := GetChanges(spec1, spec2)
+	changes, err := GetYamlNodeChanges(spec1, spec2)
 	if err != nil {
 		return nil, err
 	}
 	return changes, nil
 }
 
-// GetChanges returns the changes between the two yaml documents
-func GetChanges(doc1, doc2 *yaml.Node) (ChangeLogEntries, error) {
+// GetYamlNodeChanges returns the changes between the two yaml documents
+func GetYamlNodeChanges(doc1, doc2 *yaml.Node) (ChangeLogEntries, error) {
 	changes := ChangeLogEntries{}
 	hashed1 := HashNode(doc1)
 	hashed2 := HashNode(doc2)
@@ -409,7 +409,8 @@ func diffMappedChildren(children1, children2 HashedNodes) ChangeLogEntries {
 	return changes
 }
 
-func readSpec(filename string) (*yaml.Node, error) {
+// ReadYAMLFile Reads a YAML file into a yaml.Node
+func ReadYAMLFile(filename string) (*yaml.Node, error) {
 	f, err := os.Open(filename)
 	if err != nil {
 		return nil, err

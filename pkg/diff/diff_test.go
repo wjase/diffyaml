@@ -93,7 +93,7 @@ func TestDiffFiles(t *testing.T) {
 		for _, tc := range testCases {
 			tc := tc
 			t.Run(tc.name, func(t *testing.T) {
-				changes, err := diff.CompareYamlFiles(tc.oldSpec, tc.newSpec)
+				changes, err := diff.GetYamlFileChanges(tc.oldSpec, tc.newSpec)
 
 				if tc.expectedError {
 					// edge cases with error
