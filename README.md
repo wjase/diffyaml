@@ -1,4 +1,5 @@
 # diffyaml
+![Go](https://github.com/wjase/diffyaml/workflows/Go/badge.svg)
 
 ## Semantic difference for yaml files
 
