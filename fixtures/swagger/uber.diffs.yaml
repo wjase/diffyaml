@@ -1,3 +1,4 @@
+
 - path: doc.definitions.Product.properties.display_name.description
   type: added
   to: Display name of product.
