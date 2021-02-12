@@ -7,9 +7,7 @@
   type: changed
   from: string
   to: integer
-- path: doc.definitions.B2.allOf.$ref:#/definitions/A3
-  type: deleted
-  from-index: 0
-- path: doc.definitions.B2.allOf.$ref:#/definitions/A4
-  type: added
-  to-index: 0
+- path: doc.definitions.B2.allOf.[0].$ref
+  type: changed
+  from: '#/definitions/A3'
+  to: '#/definitions/A4'
