@@ -91,15 +91,15 @@ func buildChildren(hashedNode *HashedNode) {
 				key = previousKeyNode
 			}
 		}
-		if eachChild.Kind == yaml.MappingNode && nodeKind == yaml.SequenceNode {
-			childCount := len(eachChild.Content)
-			if childCount > 2 {
-				key = eachChild.Content[0].Value
-				if len(eachChild.Content[1].Value) > 0 {
-					key = key + ":" + eachChild.Content[1].Value
-				}
-			}
-		}
+		// if eachChild.Kind == yaml.MappingNode && nodeKind == yaml.SequenceNode {
+		// 	childCount := len(eachChild.Content)
+		// 	if childCount > 2 {
+		// 		key = eachChild.Content[0].Value
+		// 		if len(eachChild.Content[1].Value) > 0 {
+		// 			key = key + ":" + eachChild.Content[1].Value
+		// 		}
+		// 	}
+		// }
 		childHashedNode := HashNode(eachChild)
 		childHashedNode.Key = key
 		hashedNode.Children = append(hashedNode.Children, childHashedNode)
