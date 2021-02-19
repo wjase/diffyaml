@@ -1,6 +1,12 @@
 - path: doc.paths./a/{id}.post
   type: deleted
+  line: 44
+  column: 7
 - path: doc.paths./b/
   type: deleted
+  line: 86
+  column: 5
 - path: doc.paths./newpath/
   type: added
+  line: 74
+  column: 5

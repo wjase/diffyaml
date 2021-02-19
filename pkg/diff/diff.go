@@ -53,6 +53,8 @@ func diffNode(node1, node2 *HashedNode) ChangeLogEntries {
 				ChangeType: Changed,
 				From:       node1.Node,
 				To:         node2.Node,
+				Line:       &node2.Node.Line,
+				Column:     &node2.Node.Column,
 			})
 		}
 	case yaml.AliasNode:
@@ -128,6 +130,7 @@ func diffSequenceChildren(seq1, seq2 HashedNodes) ChangeLogEntries {
 			entry.To = hashedItem
 			entry.FromIndex = item.FromIndex
 			entry.ToIndex = item.ToIndex
+
 			changes = append(changes, entry)
 		}
 	}
@@ -154,6 +157,8 @@ func diffSequenceOfMappingNodes(children1, children2 HashedNodes) ChangeLogEntri
 			Path:       hashedNode.GetPath().String(),
 			ToIndex:    &addedIndex,
 			To:         hashedNode.Node,
+			Line:       &hashedNode.Node.Line,
+			Column:     &hashedNode.Node.Column,
 		})
 	}
 	for eachKey := range deleted {
@@ -163,6 +168,8 @@ func diffSequenceOfMappingNodes(children1, children2 HashedNodes) ChangeLogEntri
 			Path:       hashedNode.GetPath().String(),
 			FromIndex:  &deletedIndex,
 			From:       hashedNode.Node,
+			Line:       &hashedNode.Node.Line,
+			Column:     &hashedNode.Node.Column,
 		})
 	}
 
@@ -198,10 +205,14 @@ func diffScalarSequence(children1, children2 HashedNodes) ChangeLogEntries {
 		if change.ToIndex != nil {
 			change.Path = children2[*change.ToIndex].GetPath().String()
 			change.To = children2[*change.ToIndex].Node
+			change.Line = &change.To.Line
+			change.Column = &change.To.Column
 		}
 		if change.FromIndex != nil {
 			change.Path = children1[*change.FromIndex].GetPath().String()
 			change.From = children1[*change.FromIndex].Node
+			change.Line = &change.From.Line
+			change.Column = &change.From.Column
 		}
 		changes[index] = change
 	}
@@ -217,6 +228,8 @@ func diffScalarSequence(children1, children2 HashedNodes) ChangeLogEntries {
 						item.ChangeType = Moved
 						item.FromIndex = deleted.FromIndex
 						item.ToIndex = added.ToIndex
+						item.Line = added.Line
+						item.Column = added.Column
 						item.To = nil
 						changes[deletedIndex].ChangeType = NoChange
 						changes[addedIndex] = item
@@ -266,15 +279,21 @@ func toChangeLog(seqChanges []SequenceChangeLogEntry) ChangeLogEntries {
 		entry := ChangeLogEntry{Path: c.Path, ChangeType: c.ChangeType}
 		if c.From != nil {
 			entry.From = c.From.Node
+			entry.Line = &c.From.Node.Line
+			entry.Column = &c.From.Node.Column
 		}
 		if c.To != nil {
 			entry.To = c.To.Node
+			entry.Line = &c.To.Node.Line
+			entry.Column = &c.To.Node.Column
 		}
 		if c.ChangeType == Moved {
 			from := c.FromIndex
 			entry.FromIndex = &from
 			to := c.ToIndex
 			entry.ToIndex = &to
+			entry.Line = &c.From.Node.Line
+			entry.Column = &entry.From.Column
 		}
 
 		changes = append(changes, entry)
@@ -394,7 +413,13 @@ func diffMappedChildren(children1, children2 HashedNodes) ChangeLogEntries {
 
 	for k, item1 := range map1 {
 		if item2, ok := map2[k]; !ok {
-			changes = append(changes, ChangeLogEntry{Path: item1.GetPath().String(), ChangeType: Deleted, From: item1.Node})
+			changes = append(changes, ChangeLogEntry{
+				Path:       item1.GetPath().String(),
+				ChangeType: Deleted,
+				From:       item1.Node,
+				Line:       &item1.Node.Line,
+				Column:     &item1.Node.Column,
+			})
 		} else {
 			if item2.Hash != item1.Hash {
 				changes = append(changes, diffNode(&item1, &item2)...)
@@ -403,7 +428,13 @@ func diffMappedChildren(children1, children2 HashedNodes) ChangeLogEntries {
 	}
 	for k, item2 := range map2 {
 		if _, ok := map1[k]; !ok {
-			changes = append(changes, ChangeLogEntry{Path: item2.GetPath().String(), ChangeType: Added, To: item2.Node})
+			changes = append(changes, ChangeLogEntry{
+				Path:       item2.GetPath().String(),
+				ChangeType: Added,
+				To:         item2.Node,
+				Line:       &item2.Node.Line,
+				Column:     &item2.Node.Column,
+			})
 		}
 	}
 	return changes

@@ -1,10 +1,16 @@
 - path: doc.definitions.A1.properties.wasRef.$ref
   type: deleted
   from: '#/definitions/A5'
+  line: 146
+  column: 15
 - path: doc.definitions.A1.properties.wasRef.type
   type: added
   to: string
+  line: 146
+  column: 15
 - path: doc.definitions.A4.properties.changeRef.$ref
   type: changed
   from: '#/definitions/A5'
   to: '#/definitions/A1'
+  line: 184
+  column: 15

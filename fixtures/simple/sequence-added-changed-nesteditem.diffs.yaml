@@ -1,7 +1,11 @@
-- path: doc.first-key:item3.second-key
+- path: doc.[2].first-key
   type: changed
-  from: item2
-  to: somevalue
-- path: doc.first-key:newitem
+  from: item3
+  to: newitem
+  line: 7
+  column: 14
+- path: doc.[3]
   type: added
-  to-index: 2
+  to-index: 3
+  line: 10
+  column: 3

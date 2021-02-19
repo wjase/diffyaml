@@ -1,4 +1,6 @@
-- path: doc.first-key:item3.second-key
+- path: doc.[2].second-key
   type: changed
   from: item2
   to: changed
+  line: 8
+  column: 15

@@ -39,6 +39,8 @@ type ChangeLogEntry struct {
 	To         *yaml.Node `yaml:"to,omitempty"`
 	FromIndex  *int       `yaml:"from-index,omitempty"`
 	ToIndex    *int       `yaml:"to-index,omitempty"`
+	Line       *int       `yaml:"line,omitempty"`
+	Column     *int       `yaml:"column,omitempty"`
 }
 
 // ChangeLogEntries custom collection type

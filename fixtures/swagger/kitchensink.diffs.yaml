@@ -2,89 +2,141 @@
   type: changed
   from: /api
   to: /apibaby
+  line: 6
+  column: 11
 - path: doc.consumes.[0]
   type: changed
   from: bill
   to: bob
+  line: 10
+  column: 5
 - path: doc.definitions.A1.properties.newProp
   type: added
+  line: 177
+  column: 9
 - path: doc.definitions.A1.properties.onceWasArray.items
   type: deleted
+  line: 181
+  column: 11
 - path: doc.definitions.A1.properties.onceWasArray.type
   type: changed
   from: array
   to: string
+  line: 179
+  column: 15
 - path: doc.definitions.A1.properties.sameWideness.format
   type: added
   to: float
+  line: 182
+  column: 17
 - path: doc.definitions.A1.required
   type: added
+  line: 162
+  column: 7
 - path: doc.definitions.A2.required.[1]
   type: deleted
   from: description
   from-index: 1
+  line: 188
+  column: 9
 - path: doc.definitions.A3.required
   type: deleted
+  line: 197
+  column: 7
 - path: doc.definitions.ThisWasAdded
   type: added
+  line: 193
+  column: 5
 - path: doc.host
   type: changed
   from: petstore.swagger.wordnik.com
   to: petstore.swaggery.wordnik.com
-- path: doc.paths./a/.get.parameters.name:ObjToPrim.schema
+  line: 5
+  column: 7
+- path: doc.paths./a/.get.parameters.[10].schema
   type: deleted
-- path: doc.paths./a/.get.parameters.name:ObjToPrim.type
+  line: 74
+  column: 13
+- path: doc.paths./a/.get.parameters.[10].type
   type: added
   to: integer
-- path: doc.paths./a/.get.parameters.name:addedHeaderParam
-  type: added
-  to-index: 2
-- path: doc.paths./a/.get.parameters.name:changeMaxInt.exclusiveMaximum
-  type: changed
-  from: false
-  to: true
-- path: doc.paths./a/.get.parameters.name:changeMaxInt.maximum
-  type: changed
-  from: 200
-  to: 300
-- path: doc.paths./a/.get.parameters.name:changeMinInt.exclusiveMinimum
-  type: changed
-  from: false
-  to: true
-- path: doc.paths./a/.get.parameters.name:changeMinInt.minimum
-  type: changed
-  from: 200
-  to: 300
-- path: doc.paths./a/.get.parameters.name:changeyPattern.pattern
-  type: changed
-  from: '*'
-  to: anewpattern
-- path: doc.paths./a/.get.parameters.name:deletedHeaderParam
-  type: deleted
-  from-index: 2
-- path: doc.paths./a/.get.parameters.name:headerParam.schema.format
+  line: 73
+  column: 17
+- path: doc.paths./a/.get.parameters.[1].schema.format
   type: deleted
   from: password
-- path: doc.paths./a/.get.parameters.name:primToObj.schema
-  type: added
-- path: doc.paths./a/.get.parameters.name:primToObj.type
-  type: deleted
-  from: integer
-- path: doc.paths./a/.get.parameters.name:removeMaxInt.exclusiveMaximum
+  line: 25
+  column: 21
+- path: doc.paths./a/.get.parameters.[2].name
+  type: changed
+  from: deletedHeaderParam
+  to: addedHeaderParam
+  line: 25
+  column: 17
+- path: doc.paths./a/.get.parameters.[3].exclusiveMaximum
+  type: changed
+  from: false
+  to: true
+  line: 35
+  column: 29
+- path: doc.paths./a/.get.parameters.[3].maximum
+  type: changed
+  from: 200
+  to: 300
+  line: 34
+  column: 20
+- path: doc.paths./a/.get.parameters.[4].exclusiveMaximum
   type: changed
   from: true
   to: false
-- path: doc.paths./a/.get.parameters.name:wideryString.type
+  line: 41
+  column: 29
+- path: doc.paths./a/.get.parameters.[5].exclusiveMinimum
+  type: changed
+  from: false
+  to: true
+  line: 47
+  column: 29
+- path: doc.paths./a/.get.parameters.[5].minimum
+  type: changed
+  from: 200
+  to: 300
+  line: 46
+  column: 20
+- path: doc.paths./a/.get.parameters.[6].type
   type: changed
   from: integer
   to: string
+  line: 51
+  column: 17
+- path: doc.paths./a/.get.parameters.[8].pattern
+  type: changed
+  from: '*'
+  to: anewpattern
+  line: 64
+  column: 20
+- path: doc.paths./a/.get.parameters.[9].schema
+  type: added
+  line: 69
+  column: 13
+- path: doc.paths./a/.get.parameters.[9].type
+  type: deleted
+  from: integer
+  line: 69
+  column: 17
 - path: doc.paths./a/.get.responses.200.headers
   type: deleted
+  line: 79
+  column: 13
 - path: doc.produces.[0]
   type: changed
   from: bill
   to: bob
+  line: 12
+  column: 5
 - path: doc.schemes.[0]
   type: changed
   from: http
   to: https
+  line: 8
+  column: 5

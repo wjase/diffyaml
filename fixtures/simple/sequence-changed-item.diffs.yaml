@@ -2,7 +2,11 @@
   type: deleted
   from: an item 2
   from-index: 1
+  line: 2
+  column: 3
 - path: doc.[1]
   type: added
   to: an item something else
   to-index: 1
+  line: 2
+  column: 3
